@@ -1,0 +1,49 @@
+<app-header titulo="LISTA DE PEDIDOS"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">lista-pedidos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-list class="ion-text-center">
+    <h1>alo</h1>
+    
+    <ion-button color="success">Disponibles</ion-button>
+    <ion-button color="danger">Completados</ion-button>
+    <ion-button color="tertiary">En reparto</ion-button>
+  </ion-list>
+  
+  <ion-list class="ion-text-center">
+    <ion-button style="--background: var(--camello-primary)">Mostrar Todos</ion-button>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Aquí va el título del pedido</ion-card-title>
+      <ion-card-subtitle>Aquí va el ID</ion-card-subtitle>
+      <ion-card-subtitle>Aquí va la dirección</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="img" src="assets/img/camelloFood2.jpg"/>
+          </ion-thumbnail>
+          <ion-button style="--background: var(--camello-primary)" routerLink="/sistema/detalle-pedido">Detalles</ion-button>
+
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title routerLink="/sistema/menu_repa" style="text-align:center; color:red;" >Regresar</ion-title>
+  </ion-toolbar>
+</ion-footer>

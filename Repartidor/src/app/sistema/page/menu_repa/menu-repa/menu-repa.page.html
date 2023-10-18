@@ -1,0 +1,48 @@
+<app-header titulo="MENÚ REPARTIDOR"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">menu_repa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card routerLink="/sistema/lista_pedidos">
+    <ion-card-header>
+      <ion-card-title>Lista de pedidos <ion-icon name="fast-food"></ion-icon></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí se encontrarán todos los pedidos disponbiles hasta el momento, también se podrá
+      consultar los pedidos ya entregados.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/sistema/mi_perfil">
+    <ion-card-header>
+      <ion-card-title>Mi perfil <ion-icon name="person-circle"></ion-icon></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí puedes consultar información sobre tu perfil.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/sistema/historial_pedidos"> 
+    <ion-card-header>
+      <ion-card-title>Historial de pedidos <ion-icon name="time"></ion-icon></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Aquí puedes consultar todos los pedidos que hayas realizado.
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title routerLink="/sistema/menu_principal" style="text-align:center; color:red;" >Salir al menú principal</ion-title>
+  </ion-toolbar>
+</ion-footer>

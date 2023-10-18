@@ -1,0 +1,7 @@
+{
+  "name": "Repartidor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
