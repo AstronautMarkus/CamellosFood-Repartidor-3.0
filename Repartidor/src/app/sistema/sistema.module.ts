@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SistemaRoutingModule } from './sistema-routing.module';
 
+import { GoogleMapsModule } from '@angular/google-maps';
+
 import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './page/login/login.page';
 import { HomepagePage } from './page/homepage/homepage.page';
@@ -23,6 +25,7 @@ import { ComponentsModule } from '../components/components.module';
 
 
 
+
 @NgModule({
   declarations: [
     LoginPage,
@@ -39,6 +42,7 @@ import { ComponentsModule } from '../components/components.module';
     SeguimientoPedidoPage
   ],
   imports: [
+    GoogleMapsModule,
     CommonModule,
     SistemaRoutingModule,
     IonicModule, 

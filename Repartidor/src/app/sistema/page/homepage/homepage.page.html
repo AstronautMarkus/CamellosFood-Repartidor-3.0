@@ -2,21 +2,21 @@
 
 <ion-content [fullscreen]="true">
   
-  <div class="contenedor_img">
-    <ion-img class="camelloLogo" src="assets/img/camelloLogo.jpg"></ion-img>
-  </div>
-  
-  <div class="contenedor_btn">
-      <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin" routerLink="/sistema/login">Iniciar sesión</ion-button>
-  </div>
+  <google-map
+  height="100%"
+  width="100%"
+  style="background: transparent;">
+  </google-map>
 
-  
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title style="text-align:center;"><FONT color="black">● Estás desconectado </FONT></ion-title>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin" routerLink="/sistema/login">Iniciar sesión</ion-button>
+      <ion-title style="text-align: center;"><FONT color="black">● Estás desconectado </FONT></ion-title>
+    </div>
   </ion-toolbar>
 </ion-footer>
 
