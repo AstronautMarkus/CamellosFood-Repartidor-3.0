@@ -26,6 +26,7 @@ import { ComponentsModule } from '../components/components.module';
 
 
 
+
 @NgModule({
   declarations: [
     LoginPage,
@@ -50,4 +51,5 @@ import { ComponentsModule } from '../components/components.module';
     FormsModule,
   ]
 })
-export class SistemaModule { }
+
+export class SistemaModule {}
