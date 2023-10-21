@@ -9,15 +9,15 @@ import { LoadingController } from '@ionic/angular';
 })
 export class MenuPrincipalPage {
 
-  counter: number = 0;
+  counter: number = 0; // Variable para alternar y desactivar menú repa
 
   constructor(private router: Router, private loadingCtrl: LoadingController) {
   }
 
   IniciarSistema() {
     if(this.counter == 0){
-      this.router.navigate(['/sistema/start_logged']);
       this.counter = this.counter + 1
+      this.router.navigate(['/sistema/start_logged']);
       console.log("form")
     }
     else{

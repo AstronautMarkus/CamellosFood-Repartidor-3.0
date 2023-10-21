@@ -31,7 +31,7 @@
 
       <ion-button shape="round" style="--background: var(--camello-primary)" [disabled]="!isChecked1 || !isChecked2 || !isChecked3" (click)="verificarCasillas()">Confirmar</ion-button>
 
-      <p routerLink="/sistema/menu_principal" style="color:red; cursor: pointer;">Cancelar</p>
+      <p (click)="cancelarEntrada()" style="color:red; cursor: pointer;">Cancelar</p>
     
     </ion-list>
 
