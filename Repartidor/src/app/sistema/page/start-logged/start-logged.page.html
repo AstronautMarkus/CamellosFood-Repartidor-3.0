@@ -3,29 +3,42 @@
 <ion-content [fullscreen]="true">
 
 
-  <ion-item lines="none">
-
-    <p class="info-text">
-      Antes de empezar
-      confirme las siguientes opciones:
-    </p>
-
-  </ion-item>
-
-  <ion-list class="ion-text-center">
-
-    <ion-item lines="none">
-      <ion-checkbox>Verificar estado del vehículo</ion-checkbox>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-checkbox>Estoy usando ropa adecuada</ion-checkbox>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-checkbox  style="font-size: small;">llevo bolsa térmica para los productos</ion-checkbox>
-    </ion-item>
+  <form #myForm="ngForm">
     
-    <ion-button style="--background: var(--camello-primary)" class="button-margin" routerLink="/sistema/menu_repa">Enviar</ion-button>
+    <ion-item lines="none">
+      <p class="ion-text-center">
+        Antes de empezar, confirme las siguientes opciones:
+      </p>
+    </ion-item>
   
-  </ion-list>
+    <ion-list class="ion-text-center">
+      <ion-item lines="none">
+        <ion-checkbox [(ngModel)]="isChecked1" name="check1">Confirmar comuna: <b>*Comuna here*</b></ion-checkbox>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-checkbox [(ngModel)]="isChecked2" name="check2">Verificar estado del vehículo</ion-checkbox>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-checkbox [(ngModel)]="isChecked3" name="check3">Estoy usando ropa adecuada</ion-checkbox>
+      </ion-item>
+
+
+    </ion-list>
+
+    <ion-list class="ion-text-center">
+
+      <ion-button shape="round" style="--background: var(--camello-primary)" [disabled]="!isChecked1 || !isChecked2 || !isChecked3" (click)="verificarCasillas()">Confirmar</ion-button>
+
+      <p routerLink="/sistema/menu_principal" style="color:red; cursor: pointer;">Cancelar</p>
+    
+    </ion-list>
+
+  </form>
+
 
 </ion-content>
+
+
+<app-footer titulo="Antes de empezar" color="grey"></app-footer>

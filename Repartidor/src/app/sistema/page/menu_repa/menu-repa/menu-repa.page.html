@@ -35,9 +35,4 @@
 
 </ion-content>
 
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title routerLink="/sistema/menu_principal" style="text-align:center; color:red;" >Salir al menú principal</ion-title>
-  </ion-toolbar>
-</ion-footer>
+<app-footer-routing [titulo]="'Salir al menú principal'" [color]="'red'" [enlaceCustom]="'/sistema/menu_principal'"></app-footer-routing>

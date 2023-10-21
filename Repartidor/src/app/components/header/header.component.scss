@@ -1,7 +1,10 @@
 .titulos_repa {
-    text-align: center;
-    font-size: 25px;
-  }
+  text-align: center;
+  font-size: 20px;
+  white-space: normal; /* Para que las palabras se envuelvan a la siguiente línea */
+  word-wrap: break-word; /* Romper palabras largas en medio si es necesario */
+}
+
 
 ion-toolbar{
     height: 75px;
