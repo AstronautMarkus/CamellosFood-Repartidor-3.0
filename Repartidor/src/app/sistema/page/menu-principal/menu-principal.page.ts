@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
@@ -7,52 +7,41 @@ import { LoadingController } from '@ionic/angular';
   templateUrl: './menu-principal.page.html',
   styleUrls: ['./menu-principal.page.scss'],
 })
-export class MenuPrincipalPage implements OnInit {
+export class MenuPrincipalPage {
 
+  counter: number = 0;
 
   constructor(private router: Router, private loadingCtrl: LoadingController) {
-  }  
+  }
+
+  IniciarSistema() {
+    if(this.counter == 0){
+      this.router.navigate(['/sistema/start_logged']);
+      this.counter = this.counter + 1
+      console.log("form")
+    }
+    else{
+      this.router.navigate(['/sistema/menu_repa']);
+      console.log("menu repa")
+    }
+
+
+  }
 
   public alertButtons = [
     {
-      text: 'Si',
-      role: 'logout',
+      text: 'No',
       handler: () => {
-        console.log('Sesión cerrada');
-        this.showLoading().then(() => {
-          setTimeout(() => {
-            this.router.navigate(['sistema/homepage']);
-          }, 3000);
-        });
+        console.log('No cierra sesión');
       },
     },
     {
-      text: 'NO',
-      role: 'continue-logged-in',
+      text: 'Si',
       handler: () => {
-        console.log('Sesión continuada');
+        console.log('Cierra sesión');
+        this.router.navigate(['sistema/homepage']);
       },
     },
   ];
-
-  setResult(ev:any) {
-    console.log(`Seguido con el rol: ${ev.detail.role}`);
-  }
-
-  async showLoading() {
-    const loading = await this.loadingCtrl.create({
-      message: 'Saliendo del sistema...',
-      duration: 2500,
-    });
-
-    loading.present();
-  }
-
-  recargarPagina() {
-    window.location.reload(); 
-  }
-
-  ngOnInit() {
-  }
 
 }

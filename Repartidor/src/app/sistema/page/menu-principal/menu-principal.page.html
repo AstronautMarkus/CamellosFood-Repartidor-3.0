@@ -18,7 +18,7 @@
   </ion-card>
 
 
-  <ion-card style="--background: var(--camello-primary)" routerLink="/sistema/start_logged">
+  <ion-card style="--background: var(--camello-primary)" (click)="IniciarSistema()">
     
     <ion-card-header>
       <ion-card-title style="color: white;">INICIAR SISTEMA</ion-card-title>
@@ -28,7 +28,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card color="danger" style="cursor: pointer;" routerLink="/sistema/homepage">
+  <ion-card color="danger" style="cursor: pointer;" id="logout-button">
     <ion-card-header>
       <ion-card-title style="color: white;">CERRAR SESIÓN</ion-card-title>
     </ion-card-header>
@@ -37,6 +37,8 @@
     </ion-card-content>
     
   </ion-card>
+
+<ion-alert trigger="logout-button" header="¿Desea cerrar sesión?" [buttons]="alertButtons"></ion-alert>
 
 </ion-content>
 

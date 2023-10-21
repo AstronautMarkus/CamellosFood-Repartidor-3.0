@@ -10,8 +10,8 @@ import { Geolocation, GeolocationPosition } from '@capacitor/geolocation';
 export class HomepagePage implements OnInit {
 
   center: google.maps.LatLngLiteral = {
-    lat: 35.30641723969303, // Default latitude (Ejemplo: un taller de Japón con AE86 XD)
-    lng: 136.86583694361983, // Default longitude (Ejemplo: LO DE ARRIBA)
+    lat: -33.41776959585166, // Default latitude (Ejemplo: un taller de Japón con AE86 XD)
+    lng: -70.60634718860781, // Default longitude (Ejemplo: LO DE ARRIBA)
   };
 
   constructor() { }
@@ -29,7 +29,7 @@ export class HomepagePage implements OnInit {
       };
     } catch (error) {
       // Handle the error here, such as displaying an error message or using default coordinates.
-      console.error('Error getting user location:', error);
+      console.error('Error obteniendo la posición del usuario:', error);
     }
   }
 }
