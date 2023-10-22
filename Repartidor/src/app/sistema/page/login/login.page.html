@@ -2,29 +2,28 @@
 
 <ion-content class="disabled_scroll" [fullscreen]="true">
 
-
   <ion-list>
 
     <ion-item>
       <ion-label position="floating">Ingrese su RUT</ion-label>
-      <ion-input maxlength="12" ></ion-input>
+      <ion-input [(ngModel)]="rut" (ngModelChange)="formatRut($event)" maxlength="12"></ion-input>
     </ion-item>
     
     <ion-item>
-      <ion-label position="floating" >Ingrese su contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label position="floating">Ingrese su contraseña</ion-label>
+      <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" required></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label>Mostrar contraseña</ion-label>
-      <ion-checkbox></ion-checkbox>
+      <ion-checkbox [(ngModel)]="showPassword"></ion-checkbox>
     </ion-item>
   
   </ion-list>
   
   <ion-list class="ion-text-center">
 
-    <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin" routerLink="/sistema/menu_principal">Iniciar sesión</ion-button>
+    <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin"  (click)="iniciarSesion()">Iniciar sesión</ion-button>
 
     <p style="color:blue; cursor: pointer;" routerLink="/sistema/recover_password">Olvidé la contraseña</p>
 
@@ -32,11 +31,5 @@
   
   </ion-list>
 
-
-  <!-- <div class="camel-img">
-    <ion-img src="../../assets/img/camello_2.svg" class="camel"></ion-img>
-  </div>
-   -->
-
-
+  
 </ion-content>

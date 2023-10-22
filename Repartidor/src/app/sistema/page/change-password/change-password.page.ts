@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-change-password',
@@ -7,7 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordPage implements OnInit {
 
-  constructor() { }
+  constructor(private Router: Router) { }
+
+  
+
+  public alertButtons = [
+    {
+      text: 'Si',
+      handler: () => {
+        console.log('Salió a login');
+        this.Router.navigate(['/sistema/login']);
+      },
+    },
+    {
+      text: 'No',
+      handler: () => {
+        console.log('Se mantiene en recover password');
+      },
+    }
+  ];
+
+
 
   ngOnInit() {
   }
