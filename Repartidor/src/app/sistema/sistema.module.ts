@@ -21,6 +21,9 @@ import { HistorialPedidosPage } from './page/menu_repa/historial-pedidos/histori
 import { SeguimientoPedidoPage } from './page/menu_repa/seguimiento-pedido/seguimiento-pedido.page';
 import { DetallePedidoPage } from './page/menu_repa/detalle-pedido/detalle-pedido.page';
 
+import { MiPerfilDataPage } from './page/menu_repa/mi-perfil-data/mi-perfil-data.page';
+import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfil-options.page';
+
 import { ComponentsModule } from '../components/components.module';
 
 
@@ -40,7 +43,9 @@ import { ComponentsModule } from '../components/components.module';
     MiPerfilPage,
     HistorialPedidosPage,
     DetallePedidoPage,
-    SeguimientoPedidoPage
+    SeguimientoPedidoPage,
+    MiPerfilDataPage,
+    MiPerfilOptionsPage
   ],
   imports: [
     GoogleMapsModule,

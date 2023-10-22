@@ -1,0 +1,28 @@
+<app-header titulo="OPCIONES MI PERFIL"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card routerLink="/sistema/mi_perfil_data">
+    <ion-card-header>
+      <ion-card-title>Consultar información <ion-icon name="person-circle"></ion-icon></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      En esta sección podrás ver la información del repartidor, nombre y RUT.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/sistema/mi_perfil">
+    <ion-card-header>
+      <ion-card-title>Cambiar contraseña <ion-icon name="person-circle"></ion-icon></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      En esta sección podrás cambiar la contraseña.
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+
+<app-footer-routing [titulo]="'Regresar'" [color]="'red'" [enlaceCustom]="'/sistema/menu_repa'"></app-footer-routing>

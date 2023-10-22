@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CounterFormService } from 'src/app/counter-form.service';
+import { CounterFormService } from 'src/app/services/counter-form.service';
 
 @Component({
   selector: 'app-start-logged',

@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
-import { CounterFormService } from 'src/app/counter-form.service';
+import { CounterFormService } from 'src/app/services/counter-form.service';
 
 @Component({
   selector: 'app-menu-principal',

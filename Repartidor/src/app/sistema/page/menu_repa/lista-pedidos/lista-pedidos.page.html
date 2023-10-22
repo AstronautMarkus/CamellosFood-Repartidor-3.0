@@ -3,20 +3,19 @@
 <ion-content [fullscreen]="true">
   
   <ion-list class="ion-text-center">
-    <ion-button color="success">Disponibles</ion-button>
-    <ion-button color="danger">Completados</ion-button>
-    <ion-button color="tertiary">En reparto</ion-button>
+    <ion-button shape="round" color="success">Disponibles</ion-button>
+    <ion-button shape="round" color="danger">Completados</ion-button>
+    <ion-button shape="round" color="tertiary">En reparto</ion-button>
   </ion-list>
   
   <ion-list class="ion-text-center">
-    <ion-button style="--background: var(--camello-primary)">Mostrar Todos</ion-button>
+    <ion-button shape="round" style="--background: var(--camello-primary)">Mostrar Todos</ion-button>
   </ion-list>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Aquí va el título del pedido</ion-card-title>
-      <ion-card-subtitle>Aquí va el ID</ion-card-subtitle>
-      <ion-card-subtitle>Aquí va la dirección</ion-card-subtitle>
+      <ion-card-title>**pedido**</ion-card-title>
+      <ion-card-subtitle>**ID**</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -24,7 +23,7 @@
           <ion-thumbnail slot="start">
             <img alt="img" src="assets/img/camelloFood2.jpg"/>
           </ion-thumbnail>
-          <ion-button style="--background: var(--camello-primary)" routerLink="/sistema/detalle-pedido">Detalles</ion-button>
+          <ion-button shape="round" style="--background: var(--camello-primary)" routerLink="/sistema/detalle-pedido">Detalles</ion-button>
 
         </ion-item>
       </ion-list>

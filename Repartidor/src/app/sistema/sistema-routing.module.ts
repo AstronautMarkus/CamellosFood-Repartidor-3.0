@@ -15,6 +15,9 @@ import { HistorialPedidosPage } from './page/menu_repa/historial-pedidos/histori
 import { DetallePedidoPage } from './page/menu_repa/detalle-pedido/detalle-pedido.page';
 import { SeguimientoPedidoPage } from './page/menu_repa/seguimiento-pedido/seguimiento-pedido.page';
 
+import { MiPerfilDataPage } from './page/menu_repa/mi-perfil-data/mi-perfil-data.page';
+import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfil-options.page';
+
 const routes: Routes = [
   {
     path: 'login',
@@ -64,6 +67,16 @@ const routes: Routes = [
     path: 'seguimiento-pedido',
     component: SeguimientoPedidoPage,
   },
+  {
+    path: 'mi-perfil-options',
+    component: MiPerfilOptionsPage,
+    
+  },
+  {
+    path: 'mi_perfil_data',
+    component: MiPerfilDataPage,
+  },
+
 ];
 
 @NgModule({
