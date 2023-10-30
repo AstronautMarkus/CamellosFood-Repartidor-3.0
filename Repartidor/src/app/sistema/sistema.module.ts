@@ -27,9 +27,6 @@ import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfi
 import { ComponentsModule } from '../components/components.module';
 
 
-
-
-
 @NgModule({
   declarations: [
     LoginPage,
@@ -45,7 +42,8 @@ import { ComponentsModule } from '../components/components.module';
     DetallePedidoPage,
     SeguimientoPedidoPage,
     MiPerfilDataPage,
-    MiPerfilOptionsPage
+    MiPerfilOptionsPage,
+    
   ],
   imports: [
     GoogleMapsModule,

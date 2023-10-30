@@ -75,7 +75,7 @@ const routes: Routes = [
     
   },
   {
-    path: 'mi_perfil_data',
+    path: 'mi_perfil_data/:id',
     component: MiPerfilDataPage,
   },
 

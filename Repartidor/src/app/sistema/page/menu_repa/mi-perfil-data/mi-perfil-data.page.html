@@ -2,6 +2,59 @@
 
 <ion-content [fullscreen]="true">
 
+    <ion-card>
+        <ion-card-header>
+            
+          <ion-card-title>Bienvenido, {{ empleado?.pnombre }} {{ empleado?.papellido }}</ion-card-title>
+        
+        </ion-card-header>
+      
+        <ion-card-content>
+
+            <div>
+                <p>Nombre del empleado: </p>
+                <h2 style="color: black;">{{ empleado?.pnombre }} {{ empleado?.snombre }} {{ empleado?.papellido }} {{ empleado?.mapellido }}</h2> 
+            </div>
+
+            <div>
+                <p>RUT: </p>
+                <h2 style="color: black;"> {{ formatRut(empleado?.rut) }} </h2>
+            </div>
+              
+            <div>
+                <p>Dirección: </p>
+                <h2 style="color: black;">{{ empleado?.direccion }}</h2> 
+            </div>
+
+            <div>
+                <p>Teléfono: </p>
+                <h2 style="color: black;">{{ formatPhoneNumber(empleado?.telefono) }}</h2>
+            </div>
+              
+            <div>
+                <p>Correo: </p>
+                <h2 style="color: black;">{{ empleado?.correo}}</h2> 
+            </div>
+
+            <div>
+                <p>Cargo: </p>
+                <h2 style="color: black;">{{ empleado?.cargo === 1 ? 'Repartidor' : 'Error dato ingresado erroneamente' }}</h2> 
+                <!-- cambiar el numero a futuro si es necesario para repartidor y todo eso xdxd -->
+            </div>
+
+            <div>
+                <p>Sucursal: </p>
+                <h2 style="color: black;">{{ empleado?.sucursal }}</h2> 
+            </div>
+
+
+        </ion-card-content>
+
+
+
+
+      </ion-card>
+
   
 
 
