@@ -2,33 +2,33 @@
 
 <ion-content [fullscreen]="true">
   
-  <ion-list class="ion-text-center">
-    <ion-button shape="round" color="success">Disponibles</ion-button>
-    <ion-button shape="round" color="danger">Completados</ion-button>
-    <ion-button shape="round" color="tertiary">En reparto</ion-button>
-  </ion-list>
-  
-  <ion-list class="ion-text-center">
-    <ion-button shape="round" style="--background: var(--camello-primary)">Mostrar Todos</ion-button>
-  </ion-list>
+  <ion-item>
+    <ion-label>Mostrar</ion-label>
+    <ion-select placeholder="Seleccionar" [(ngModel)]="tipoPedido">
+      <ion-select-option value="disponibles">Pedidos disponibles</ion-select-option>
+      <ion-select-option value="reparto">Pedidos en reparto</ion-select-option>
+      <ion-select-option value="completados">Pedidos completados</ion-select-option>
+      <ion-select-option value="todos">Todos los pedidos</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>**pedido**</ion-card-title>
-      <ion-card-subtitle>**ID**</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img alt="img" src="assets/img/camelloFood2.jpg"/>
-          </ion-thumbnail>
-          <ion-button shape="round" style="--background: var(--camello-primary)" routerLink="/sistema/detalle-pedido">Detalles</ion-button>
-
-        </ion-item>
-      </ion-list>
+  <ion-card *ngFor="let pedido of pedidos" (click)="verDetallePedido(pedido.id)">
+    <ion-card-content class="horizontal-card" *ngIf="mostrarPedido(pedido)">
+      <div class="left">
+        <p>Fecha del Producto</p>
+        <p style="color: black;">{{ pedido.fecha }}</p>
+      </div>
+      <div class="center">
+        <p>Orden</p>
+        <p [ngStyle]="{'color': getTextColor(pedido.estado)}">{{ pedido.pedido }}</p>
+      </div>
+      <div class="right">
+        <p>Estado</p>
+        <p [ngStyle]="{'color': getTextColor(pedido.estado)}">{{ pedido.estado }}</p>
+      </div>
     </ion-card-content>
   </ion-card>
+
 
 </ion-content>
 

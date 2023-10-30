@@ -1,4 +1,4 @@
-<app-header titulo="MI PERFIL"></app-header>
+<app-header titulo="CAMBIAR CONTRASEÑA"></app-header>
 
 
 <ion-content [fullscreen]="true">
@@ -6,22 +6,14 @@
 
 
   <div class="centered-container">
-    <img alt="" class="rounded-image" src="assets/img/camelloPhoto.jpg" />
+    <img alt="" class="rounded-image" src="assets/img/password.svg"/>
   </div>
 
 
   <ion-list >
-
-    <ion-item>
-      <ion-input label="Nombre" placeholder="Su Nombre y Apellido" disabled></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input label="RUT" placeholder="99.999.999-9" disabled></ion-input>
-    </ion-item>
   
     <ion-item>
-      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Escriba su contraseña actual" [disabled]="!cambiarContrasena"></ion-input>
+      <ion-input label="Contraseña actual" labelPlacement="floating" type="password" placeholder="Escriba su contraseña actual" [disabled]="!cambiarContrasena"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -30,11 +22,11 @@
 
   </ion-list>
 
-  <ion-button style="--background: var(--camello-primary)" expand="full" (click)="cambiarContrasena = !cambiarContrasena">
+  <ion-button style="--background: var(--camello-primary)" expand="block" shape="round" (click)="cambiarContrasena = !cambiarContrasena">
     {{ cambiarContrasena ? 'Cancelar' : 'Cambiar Contraseña' }}
   </ion-button>
 
-  <ion-button style="--background: var(--camello-primary)"  expand="full" [disabled]="!cambiarContrasena" id="present-alert">Confirmar cambios</ion-button>
+  <ion-button style="--background: var(--camello-primary)"  expand="block" shape="round" [disabled]="!cambiarContrasena" id="present-alert">Confirmar cambios</ion-button>
 
 
   
@@ -48,4 +40,4 @@
 
 </ion-content>
 
-<app-footer-routing [titulo]="'Regresar'" [color]="'red'" [enlaceCustom]="'/sistema/menu_repa'"></app-footer-routing>
+<app-footer-routing [titulo]="'Regresar'" [color]="'red'" [enlaceCustom]="'/sistema/mi-perfil-options'"></app-footer-routing>

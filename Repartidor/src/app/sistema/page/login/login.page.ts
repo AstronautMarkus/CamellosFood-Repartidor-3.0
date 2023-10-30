@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 
 
 @Component({
@@ -15,7 +17,7 @@ export class LoginPage implements OnInit, OnDestroy  {
   rut: string = '';
   isWarningToastVisible: boolean = false;
 
-  constructor(public toastController: ToastController,private router: Router) { }
+  constructor(public toastController: ToastController,private router: Router, private AlertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -48,7 +50,30 @@ export class LoginPage implements OnInit, OnDestroy  {
           this.isWarningToastVisible = false;
         });
       }
-    } else {
+    } 
+    
+    else if (this.rut && this.rut.length < 12) { // Condición si escribe RUT y contrasñera pero Rut es inferior al tamaño mínimo (12)
+
+
+      const alert_rut = await this.AlertController.create({
+        header: 'Largo incorrecto',
+        message: 'El largo del RUT es incorrecto.',
+        buttons: ['OK']
+      });
+      await alert_rut.present();
+    }
+
+    else if (this.password && this.password.length < 3){ // condición si el password es inferior a lo mínimo (3)
+
+      const alert_password = await this.AlertController.create({
+        header: 'Error en la contraseña',
+        message: 'El largo de la contraseña es muy pequeño. Por favor, verifíquelo.',
+        buttons: ['OK']
+      });
+      await alert_password.present();
+    }
+    
+    else {
 
       const successToast = await this.toastController.create({
         message: 'Sesión iniciada con éxito',
@@ -61,6 +86,7 @@ export class LoginPage implements OnInit, OnDestroy  {
       this.router.navigate(['/sistema/menu_principal']);
     }
   }
+
 
   formatRut(event: string) {
     // Elimina todos los caracteres no numéricos

@@ -1,0 +1,13 @@
+{
+  "pedidos":[
+    {"id":1, "fecha": "26/03/2023", "pedido": 1, "estado":"Disponible", "celular":"+56900000000" ,"descripcion":"Papas fritas sin mayo. Por favor tocar timbre en recepción"},
+    {"id":2, "fecha": "26/03/2023", "pedido": 2, "estado":"En reparto", "celular":"+56911111111" ,"descripcion":"Completos italianos con bebida incluida"},
+    {"id":3, "fecha": "27/03/2023", "pedido": 3, "estado":"Completado", "celular":"+56922222222" ,"descripcion":"Pizza vegetariana, sin cebolla"},
+    {"id":4, "fecha": "28/03/2023", "pedido": 4, "estado":"En reparto", "celular":"+56933333333" ,"descripcion":"Hamburguesa con extra de queso"},
+    {"id":5, "fecha": "29/03/2023", "pedido": 5, "estado":"Completado", "celular":"+56944444444" ,"descripcion":"Pollo a la parrilla con ensalada"},
+    {"id":6, "fecha": "30/03/2023", "pedido": 6, "estado":"Disponible", "celular":"+56955555555" ,"descripcion":"Sushi variado"},
+    {"id":7, "fecha": "01/04/2023", "pedido": 7, "estado":"Completado", "celular":"+56966666666" ,"descripcion":"Lasaña de carne con postre incluido"},
+    {"id":8, "fecha": "02/04/2023", "pedido": 8, "estado":"Disponible", "celular":"+56977777777" ,"descripcion":"Sándwich de pavo y aguacate"},
+    {"id":9, "fecha": "03/04/2023", "pedido": 9, "estado":"En reparto", "celular":"+56988888888" ,"descripcion":"Tacos mexicanos"}
+  ]
+}

@@ -1,0 +1,25 @@
+.horizontal-card {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .horizontal-card .left,
+  .horizontal-card .center,
+  .horizontal-card .right {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .horizontal-card p {
+    margin: 0;
+  }
+  
+  .left p,
+  .right p {
+    font-weight: bold;
+  }
+  
+  .center p {
+    font-size: 1.2em;
+  }
+  

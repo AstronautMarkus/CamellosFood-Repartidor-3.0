@@ -1,28 +1,42 @@
-<app-header titulo="DETALLE DEL PEDIDO"></app-header>
-
-
-
+<app-header titulo="DETALLES: ORDEN PEDIDO {{ pedido?.pedido }}"></app-header>
 
 <ion-content [fullscreen]="true">
-
-
-
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
     <ion-card-header>
-      <ion-card-title>Pedido nombre</ion-card-title>
-      <ion-card-subtitle>Pedido descripcion</ion-card-subtitle>
-    </ion-card-header>
-  
+      <ion-card-title style="text-align: center;">Orden número {{ pedido?.pedido }}</ion-card-title>
+    </ion-card-header> 
     <ion-card-content>
-      Desc
+      <div>
+        <p>Fecha: </p>
+        <h2 style="color: black;">{{ pedido?.fecha }}</h2>
+      </div>
+      <div>
+        <p>Estado: </p>
+        <h2 [ngClass]="{'green-text': pedido?.estado === 'Disponible', 'orange-text': pedido?.estado === 'En reparto', 'red-text': pedido?.estado === 'Completado'}">
+          {{ pedido?.estado }}
+        </h2>
+      </div>
+      <div>
+        <p>Descripción: </p>
+        <h2 style="color: black;">{{ pedido?.descripcion }}</h2>
+      </div>
     </ion-card-content>
-
   </ion-card>
-
-
-  <ion-button style="--background: var(--camello-primary)" routerLink="/sistema/seguimiento-pedido">Seguimiento del pedido</ion-button>
-
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title style="text-align: center"> Detalles de la dirección </ion-card-title>
+    </ion-card-content>
+    <ion-card-content>
+      <h2>Dirección: dirección here</h2>
+      <h2>Comuna: comuna here</h2>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-list class="ion-text-center">
+    <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin" [disabled]="pedido?.estado !== 'Disponible'">Aceptar este pedido</ion-button>
+  </ion-list>
 </ion-content>
 
-<app-footer-routing [titulo]="'Regresar'" [color]="'red'" [enlaceCustom]="'/sistema/menu_repa'"></app-footer-routing>
+
+<app-footer-routing [titulo]="'Regresar'" [color]="'red'" [enlaceCustom]="'/sistema/lista_pedidos'"></app-footer-routing>

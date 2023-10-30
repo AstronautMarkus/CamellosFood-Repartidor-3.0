@@ -1,12 +1,12 @@
 <app-header titulo="INICIAR SESIÓN"></app-header>
 
-<ion-content class="disabled_scroll" [fullscreen]="true">
+<ion-content [fullscreen]="true">
 
   <ion-list>
 
     <ion-item>
       <ion-label position="floating">Ingrese su RUT</ion-label>
-      <ion-input [(ngModel)]="rut" (ngModelChange)="formatRut($event)" maxlength="12"></ion-input>
+      <ion-input  [(ngModel)]="rut" type="tel" (ngModelChange)="formatRut($event)" maxlength="12"></ion-input>
     </ion-item>
     
     <ion-item>
