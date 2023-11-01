@@ -24,7 +24,11 @@ import { DetallePedidoPage } from './page/menu_repa/detalle-pedido/detalle-pedid
 import { MiPerfilDataPage } from './page/menu_repa/mi-perfil-data/mi-perfil-data.page';
 import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfil-options.page';
 
+import { FormFinalizarPedidoPage } from './page/menu_repa/form-finalizar-pedido/form-finalizar-pedido.page';
+
 import { ComponentsModule } from '../components/components.module';
+
+
 
 
 @NgModule({
@@ -43,6 +47,7 @@ import { ComponentsModule } from '../components/components.module';
     SeguimientoPedidoPage,
     MiPerfilDataPage,
     MiPerfilOptionsPage,
+    FormFinalizarPedidoPage
     
   ],
   imports: [

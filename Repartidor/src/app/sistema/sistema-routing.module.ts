@@ -17,6 +17,8 @@ import { SeguimientoPedidoPage } from './page/menu_repa/seguimiento-pedido/segui
 import { MiPerfilDataPage } from './page/menu_repa/mi-perfil-data/mi-perfil-data.page';
 import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfil-options.page';
 
+import { FormFinalizarPedidoPage } from './page/menu_repa/form-finalizar-pedido/form-finalizar-pedido.page';
+
 
 
 
@@ -78,6 +80,11 @@ const routes: Routes = [
     path: 'mi_perfil_data/:id',
     component: MiPerfilDataPage,
   },
+  {
+    path: 'form-finalizar-pedido/:id',
+    component: FormFinalizarPedidoPage,
+  },
+
 
 ];
 

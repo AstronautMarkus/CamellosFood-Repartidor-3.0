@@ -20,7 +20,7 @@
       "id": 3,
       "fecha": "27/03/2023",
       "pedido": 3,
-      "estado": "Completado",
+      "estado": "En reparto",
       "celular": "+56922222222",
       "descripcion": "Pizza vegetariana, sin cebolla"
     },
@@ -28,7 +28,7 @@
       "id": 4,
       "fecha": "28/03/2023",
       "pedido": 4,
-      "estado": "En reparto",
+      "estado": "Completado",
       "celular": "+56933333333",
       "descripcion": "Hamburguesa con extra de queso"
     },
@@ -52,9 +52,9 @@
       "id": 8,
       "fecha": "02/04/2023",
       "pedido": 8,
-      "estado": "Disponible",
+      "estado": "Completado",
       "celular": "+56977777777",
-      "descripcion": "Sándwich de pavo y aguacate"
+      "descripcion": "Sándwich de pavo y PALTA"
     },
     {
       "id": 9,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { ActivatedRoute } from '@angular/router';
 import { Geolocation, GeolocationPosition } from '@capacitor/geolocation';
+import { Router } from '@angular/router';
 
 
 
@@ -19,7 +20,7 @@ export class SeguimientoPedidoPage implements OnInit {
     lng: -70.60634718860781, // Default longitude (Ejemplo: LO DE ARRIBA)
   };
 
-  constructor(private route: ActivatedRoute,private pedidosService: PedidosService) { }
+  constructor(private route: ActivatedRoute,private pedidosService: PedidosService, private Router: Router) { }
 
   ngOnInit() {
 
@@ -54,6 +55,9 @@ export class SeguimientoPedidoPage implements OnInit {
     });
   }
   
+  finalizarThenFormularioEnd(id: number) {
+    this.Router.navigate(['sistema/form-finalizar-pedido/', id]);
+  }
   
 
 }
