@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
-
 import { Router } from '@angular/router';
+import { PedidosService } from 'src/app/services/pedidos.service';
 
 @Component({
   selector: 'app-lista-pedidos',
@@ -12,8 +11,8 @@ import { Router } from '@angular/router';
 export class ListaPedidosPage implements OnInit {
   pedidos: any[] = [];
   tipoPedido: string = 'todos'; // Valor por defecto
-
-  constructor(private http: HttpClient, private navCtrl: NavController, private Router: Router) { }
+  
+  constructor(private navCtrl: NavController, private Router: Router, private pedidoService: PedidosService) { }
 
   getTextColor(estado: string): string {
     switch (estado) {
@@ -29,7 +28,7 @@ export class ListaPedidosPage implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/pedidos').subscribe((data: any) => {
+    this.pedidoService.getPedidos().subscribe((data: any) => {
       this.pedidos = data;
     });
   }

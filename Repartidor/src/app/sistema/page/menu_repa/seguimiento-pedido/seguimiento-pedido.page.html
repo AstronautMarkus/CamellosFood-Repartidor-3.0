@@ -1,16 +1,21 @@
-<app-header-tracking titulo="SEGUIMIENTO DEL PEDIDO"></app-header-tracking>
+<app-header-tracking titulo="SEGUIMIENTO DEL PEDIDO {{ pedido?.pedido }}"></app-header-tracking>
 
 
 <ion-content [fullscreen]="true">
 
 
 
-<google-map height="100%" width="100%" style="background: transparent;"></google-map>
-
+    <google-map
+    height="100%"
+    width="100%"
+    style="background: transparent;"
+    [center]="center">
+    </google-map>
+  
 
 
 
 </ion-content>
 
 
-<app-footer titulo="● Siguiendo el pedido " color="green"></app-footer>
+<app-footer titulo="● Siguiendo el pedido {{ pedido?.pedido }}" color="green"></app-footer>

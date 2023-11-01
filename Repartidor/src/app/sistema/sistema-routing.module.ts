@@ -66,7 +66,7 @@ const routes: Routes = [
     component: HistorialPedidosPage,
   },
   {
-    path: 'seguimiento-pedido',
+    path: 'seguimiento-pedido/:id',
     component: SeguimientoPedidoPage,
   },
   {

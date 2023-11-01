@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -28,6 +27,7 @@ export class LoginPage implements OnInit, OnDestroy  {
     this.password = '';
     this.showPassword = false;
     this.rut = '';
+
   }
 
   togglePasswordVisibility() {
