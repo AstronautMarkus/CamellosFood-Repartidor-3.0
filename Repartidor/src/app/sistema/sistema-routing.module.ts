@@ -18,6 +18,7 @@ import { MiPerfilDataPage } from './page/menu_repa/mi-perfil-data/mi-perfil-data
 import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfil-options.page';
 
 import { FormFinalizarPedidoPage } from './page/menu_repa/form-finalizar-pedido/form-finalizar-pedido.page';
+import { LoginGuard } from '../guard/login.guard';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   {
     path: 'detalle-pedido/:id', 
     component: DetallePedidoPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'login',
@@ -46,10 +48,11 @@ const routes: Routes = [
   {
     path: 'menu_principal',
     component: MenuPrincipalPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'start_logged',
-    component: StartLoggedPage,
+    component: StartLoggedPage, 
   },
   {
     path: 'menu_repa',
@@ -79,10 +82,12 @@ const routes: Routes = [
   {
     path: 'mi_perfil_data/:id',
     component: MiPerfilDataPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'form-finalizar-pedido/:id',
     component: FormFinalizarPedidoPage,
+    canActivate:[LoginGuard]
   },
 
 

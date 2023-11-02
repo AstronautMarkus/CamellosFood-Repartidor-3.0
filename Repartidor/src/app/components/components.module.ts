@@ -10,14 +10,19 @@ import { FooterRoutingComponent } from './footer-routing/footer-routing.componen
 
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { LoginPageBaseComponent } from './login-page-base/login-page-base.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
-  declarations: [HeaderComponent,HeaderTrackingComponent,FooterComponent,FooterRoutingComponent],
-  exports:[HeaderComponent,HeaderTrackingComponent,FooterComponent,FooterRoutingComponent],
+  declarations: [HeaderComponent,HeaderTrackingComponent,FooterComponent,FooterRoutingComponent, LoginPageBaseComponent],
+  exports:[HeaderComponent,HeaderTrackingComponent,FooterComponent,FooterRoutingComponent, LoginPageBaseComponent],
   imports: [
-    CommonModule,
+    CommonModule, 
     IonicModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class ComponentsModule { }

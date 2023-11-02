@@ -1,0 +1,30 @@
+.container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.field-container {
+    margin-bottom: 10px;
+    display: flex;
+}
+.submit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+img {
+    max-width: 70px;
+    margin-bottom: 25px;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 0px;
+    object-fit: fill;
+}

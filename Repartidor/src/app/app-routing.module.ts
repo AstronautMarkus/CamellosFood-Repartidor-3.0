@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'sistema/homepage',
+    redirectTo: 'sistema/menu_principal',
     pathMatch: 'full'
     
   },

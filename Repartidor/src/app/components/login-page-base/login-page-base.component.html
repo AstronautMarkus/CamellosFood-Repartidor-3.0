@@ -1,0 +1,82 @@
+<div class="container">
+  <!-- 
+    DOCUMENTACION
+    
+    * authWithRut
+    authWithRut es un input booleano que te permite decidir si el formulario se va a mostrar con RUT o
+    correo. Si en el input se coloca que authWithRut es verdader, entonces mostrará el campo de RUT para los
+    staff, caso contrario, muestra el campo de correo para el usuario. Importante considerar que 
+    authWithRut por defecto está en  falso. De este modo, al usarlo en una page, no hace falta colocar 
+    explicitamente [authWithRut]="false".
+
+    * imgUrl
+    imgUrl es un input que recibe un string de la ubicacion de una imagen para mostrar en la parte superior,
+    si no se especifica queda la pantalla en blanco. Se sugiere que la imagen sea un logo de algo.
+    Ejemplo: imgUrl="../assets/img/foto.jpg"
+
+    * routeLogin y routeRegister
+    route es un input que recibe un string y se debe escribir la ruta a la cual va a dirigir una vez se pinche
+    "ingresar" o "Registrarse". Ejemplo: routeLogin="/home" o routeRegister="/registro"
+
+    * titulo
+    Es el titulo que aparecerá bajo la imagen
+    
+    Ejemplo practico de implementacion:
+   
+    (Tu LoginPage debe tener el app-login-page-base dentro de ion-content, si no, no aparece xd)
+
+    Implementacion:
+    <ion-content>
+      <app-login-page-base [authWithRut]="true | false" imgUrl="../../../assets/img/foto.jpg" route="/"></app-login-page-base>
+    </ion-content>  
+  -->
+  
+  <form (ngSubmit)="onSubmit()">
+    <div class="img-container">
+      
+      <img src="{{imgUrl}}" alt="">
+      <h1 style="position: absolute; font-family: BebasNeue; font-size: 150%;">{{titulo}}</h1>
+      
+    </div>
+  
+    <div style="width: 100%; height: 100%;">
+      <!-- STAFF -->
+      <article class="field-container" *ngIf="authWithRut">
+        <!-- Si authWithRut es verdadero, entonces muestra el campo de rut -->
+        <ion-input label="Ingresa tu RUT" labelPlacement="stacked" placeholder="12345678-9" fill="" maxlength="10"
+          mode="md" pattern="[0-9]{8}[\-][0-9kK]" helperText="Ingresa el rut sin puntos y con guión"
+          errorText="Rut inválido: asegurate que no tenga puntos y tenga guión" type="text" autocapitalize="on"
+          inputmode="text" [(ngModel)]="formFields.rut" [ngModelOptions]="{standalone: true}" required>
+        </ion-input>
+      </article>
+  
+      <!-- USUARIO -->
+      <article class="field-container" *ngIf="!authWithRut">
+        <!-- Si authWithRut NO es verdadero, entonces muestra el campo de correo -->
+        <ion-input label="Ingresa correo" labelPlacement="stacked" placeholder="ejemplo@dominio.cl" fill=""
+          maxlength="30" mode="md" helperText="Ingresa tu correo electronico" errorText="Correo inválido" type="email"
+          inputmode="email" [(ngModel)]="formFields.email" email [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </article>
+  
+      <article class="field-container">
+        <ion-input label="" labelPlacement="stacked" placeholder="Contraseña" fill=""
+          maxlenght="12" mode="md" helperText="" errorText="Contraseña inválida" type="password"
+          [(ngModel)]="formFields.password" password [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </article>
+    </div>
+  
+    <article class="field-container submit-container">
+      <ion-checkbox [(ngModel)]="formFields.recuerdame" [ngModelOptions]="{standalone: true}" labelPlacement="end">Recuerdame</ion-checkbox>
+      <ion-button [disabled]="isSubmitButtonDisabled()" type="submit" style="padding: 7px 0; --background: var(--camello-primary)"  type="submit">Ingresar</ion-button>
+      <ion-text style="padding: 7px 0;" *ngIf="canRegister">
+        <div style="display: flex; flex-direction: column; text-align: center;">
+          <span>¿Necesitas crear una cuenta?</span>
+          <a (click)="redirectToRegistro()">Registrate aquí</a>
+        </div>
+      </ion-text>
+    </article>
+  </form>
+  
+</div>
