@@ -2,14 +2,15 @@
 
 <ion-content [fullscreen]="true">
   
-  <h1>wena compa, si llegaste aqui el pedido fue finalizao </h1>
+  <h1>Finalización de pedido </h1>
 
-  <h1>para q veas: </h1>
+  <h1>Temporal: </h1>
 
-  <h1>estado pedido {{ pedido?.estado}} </h1>
+  <h1>Estado pedido {{ pedido?.estado}} </h1>
 
-  <button (click)="finalizarPedido(pedido.id)">finalizar</button>
+  <ion-button (click)="finalizarPedido(pedido.id)">Finalizar pedido id {{pedido?.id}}</ion-button>
 
-  <button (click)="salirForm()">salir!!!</button>
+
+  <ion-button (click)="salirForm()">Salir Temporal</ion-button>
 </ion-content>
 
