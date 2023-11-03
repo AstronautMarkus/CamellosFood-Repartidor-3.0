@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation, GeolocationPosition } from '@capacitor/geolocation';
+import { AuthService } from 'src/app/services/auth-service';
 
 @Component({
   selector: 'app-homepage',
@@ -9,16 +10,21 @@ import { Geolocation, GeolocationPosition } from '@capacitor/geolocation';
 
 export class HomepagePage implements OnInit {
 
+  public change_header: number = 0;
+
   center: google.maps.LatLngLiteral = {
     lat: -33.41776959585166, // Default latitude (Ejemplo: un taller de Japón con AE86 XD)
     lng: -70.60634718860781, // Default longitude (Ejemplo: LO DE ARRIBA)
   };
 
-  constructor() { }
+  constructor(private AuthService: AuthService) { }
 
   ngOnInit() {
     this.getPosition();
+    this.checkAuthentication();
   }
+
+
 
   async getPosition() {
     try {
@@ -32,6 +38,20 @@ export class HomepagePage implements OnInit {
       console.error('Error obteniendo la posición del usuario:', error);
     }
   }
+
+  checkAuthentication() {
+    if (this.AuthService.isAuthenticated()) {
+
+      this.change_header = 1;
+      console.log('El usuario ha iniciado sesión.');
+    } else {
+
+      this.change_header = 0;
+      console.log('El usuario no ha iniciado sesión.');
+    }
+  }
+
+
 }
 
 

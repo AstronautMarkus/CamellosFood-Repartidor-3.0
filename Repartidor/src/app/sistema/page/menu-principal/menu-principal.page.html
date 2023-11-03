@@ -28,6 +28,17 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card style="--background: green" (click)="verMapa()">
+    
+    <ion-card-header>
+      <ion-card-title style="color: white;">VER EL MAPA</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="color: white;">
+      Revisar tu punto de localización actual en el sistema.
+    </ion-card-content>
+  </ion-card>
+
+
   <ion-card color="danger" style="cursor: pointer;" id="logout-button">
     <ion-card-header>
       <ion-card-title style="color: white;">CERRAR SESIÓN</ion-card-title>
@@ -37,6 +48,8 @@
     </ion-card-content>
     
   </ion-card>
+
+
 
 <ion-alert trigger="logout-button" header="¿Desea cerrar sesión?" [buttons]="alertButtons"></ion-alert>
 

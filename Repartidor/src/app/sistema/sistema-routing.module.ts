@@ -52,31 +52,38 @@ const routes: Routes = [
   },
   {
     path: 'start_logged',
-    component: StartLoggedPage, 
+    component: StartLoggedPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'menu_repa',
     component: MenuRepaPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'lista_pedidos',
     component: ListaPedidosPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'mi_perfil',
     component: MiPerfilPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'historial_pedidos',
     component: HistorialPedidosPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'seguimiento-pedido/:id',
     component: SeguimientoPedidoPage,
+    canActivate:[LoginGuard]
   },
   {
     path: 'mi-perfil-options',
     component: MiPerfilOptionsPage,
+    canActivate:[LoginGuard]
     
   },
   {
