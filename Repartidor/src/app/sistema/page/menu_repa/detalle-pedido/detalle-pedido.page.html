@@ -34,7 +34,7 @@
   </ion-card>
   
   <ion-list class="ion-text-center">
-    <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin" [disabled]="pedido?.estado !== 'Disponible'" (click)="seguirPedido(pedido.id)">Aceptar este pedido</ion-button>
+    <ion-button shape="round" style="--background: var(--camello-primary)" size="default" class="button-margin" [disabled]="pedido?.estado !== '3'" (click)="seguirPedido(pedido.id)">Aceptar este pedido</ion-button>
   </ion-list>
 
 

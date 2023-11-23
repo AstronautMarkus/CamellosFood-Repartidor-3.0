@@ -26,7 +26,7 @@ export class FormFinalizarPedidoPage implements OnInit {
   }
 
   finalizarPedido(id: number) {
-    this.pedidosService.actualizarEstadoPedido(this.pedidoId, 'Completado').subscribe((data) => {
+    this.pedidosService.actualizarEstadoPedido(this.pedidoId, '5').subscribe((data) => {
       this.pedido = data;
     });
   }

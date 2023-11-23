@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { HttpHeaders } from '@angular/common/http';
+import { AuthService } from './auth-service';
 
 
 @Injectable({
@@ -14,8 +16,10 @@ export class PedidosService {
 
 
   getPedidos(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/pedidos'); // cambiar URL A FUTURO
+    return this.http.get<any[]>('http://localhost:3000/pedidos/'); // cambiar URL A FUTURO + key + "=" + value, options);
   }
+
+
 
   getPedidoById(id: number): Observable<any> {
     return this.http.get<any>(`http://localhost:3000/pedidos/${id}`); // cambiar URL A FUTURO

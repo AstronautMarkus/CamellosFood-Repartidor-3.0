@@ -16,11 +16,11 @@ export class ListaPedidosPage implements OnInit {
 
   getTextColor(estado: string): string {
     switch (estado) {
-      case 'Disponible':
+      case '3':
         return 'green';
-      case 'En reparto':
+      case '5':
         return 'orange';
-      case 'Completado':
+      case '3':
         return 'red';
       default:
         return 'black';
@@ -28,9 +28,11 @@ export class ListaPedidosPage implements OnInit {
   }
 
   ngOnInit() {
+
     this.pedidoService.getPedidos().subscribe((data: any) => {
       this.pedidos = data;
     });
+    
   }
 
   verDetallePedido(id: number) {
