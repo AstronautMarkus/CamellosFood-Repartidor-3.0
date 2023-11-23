@@ -8,7 +8,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './page/login/login.page';
 import { HomepagePage } from './page/homepage/homepage.page';
-import { RecoverPasswordPage } from './page/recover-password/recover-password.page';
 import { ChangePasswordPage } from './page/change-password/change-password.page';
 import { MenuPrincipalPage } from './page/menu-principal/menu-principal.page';
 import { StartLoggedPage } from './page/start-logged/start-logged.page';
@@ -27,8 +26,13 @@ import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfi
 import { FormFinalizarPedidoPage } from './page/menu_repa/form-finalizar-pedido/form-finalizar-pedido.page';
 
 import { ComponentsModule } from '../components/components.module';
+import { RouterModule } from '@angular/router';
 
+import { FooterRoutingComponent } from '../components/footer-routing/footer-routing.component';
 
+import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password.page';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,7 +40,6 @@ import { ComponentsModule } from '../components/components.module';
     LoginPage,
     HomepagePage,
     ChangePasswordPage,
-    RecoverPasswordPage,
     MenuPrincipalPage,
     StartLoggedPage,
     MenuRepaPage,
@@ -47,7 +50,11 @@ import { ComponentsModule } from '../components/components.module';
     SeguimientoPedidoPage,
     MiPerfilDataPage,
     MiPerfilOptionsPage,
-    FormFinalizarPedidoPage
+    FormFinalizarPedidoPage,
+    RecuperarPasswordPage,
+
+
+    
     
   ],
   imports: [
@@ -57,6 +64,8 @@ import { ComponentsModule } from '../components/components.module';
     IonicModule, 
     ComponentsModule,
     FormsModule,
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 

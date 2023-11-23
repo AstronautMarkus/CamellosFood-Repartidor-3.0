@@ -1,31 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Observable,} from 'rxjs';
+import { Observable, map, catchError, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ILoginCredentials } from '../interface/ILoginCredentials';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  apiURL = 'http://localhost:8000/api/auth/'
-  tokenKey = "access_token"
-  refreshTokenkey = "refresh_token"
-  token: any;
+  private apiURL = 'http://localhost:8000/api/auth'
+  private tokenKey = "access_token"
 
+  
   constructor(private http: HttpClient) { }
 
   public login(credenciales: any): Observable<any> {
 
-    return this.http.post(this.apiURL + "login/", credenciales)
+    return this.http.post(this.apiURL + "/login/", credenciales)
   }
 
 
   public isAuthenticated():Observable<any> {
     // Comprueba si el token está presente en el almacenamiento local o de sesion
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${this.getAccessToken()}` })
-    return this.http.post(this.apiURL + "token/", {},{ headers })
+    return this.http.post(this.apiURL + "/token/", {},{ headers })
+
     
-    
+
   }
 
   public getAccessToken() {
@@ -47,7 +49,13 @@ export class AuthService {
     sessionStorage.removeItem("access_token");
   }
 
-  public registrar(datos:any):Observable<any>{
-    return this.http.post(this.apiURL + "cliente/", datos)
+  public getDatosUsuario() {
+    let datos_storage = localStorage.getItem("user_data");
+    if (datos_storage === null){
+      return false
+    }
+    let datosUsuario = JSON.parse(datos_storage!)
+
+    return datosUsuario
   }
 }

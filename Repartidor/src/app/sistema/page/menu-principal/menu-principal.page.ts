@@ -13,11 +13,32 @@ import { AuthService } from 'src/app/services/auth-service';
 })
 export class MenuPrincipalPage {
 
+  userData: any; // Puedes ajustar el tipo de datos según tu estructura
 
 
   constructor(private router: Router, private loadingCtrl: LoadingController, private CounterFormService: CounterFormService, private authSrvc:AuthService ) {
   }
 
+
+  ngOnInit() {
+
+    // Obtener datos del Local Storage
+  // Obtener datos del Local Storage
+const localStorageData = localStorage.getItem('user_data');
+
+// Verificar si localStorageData no es nulo antes de intentar el análisis JSON
+if (localStorageData) {
+  // Convertir datos de cadena JSON a objeto
+  this.userData = JSON.parse(localStorageData);
+
+} else {
+
+  console.error('No se encontraron datos en el Local Storage.');
+
+}
+
+
+}
 
   obtenerHoraYMinutos(): string {
     

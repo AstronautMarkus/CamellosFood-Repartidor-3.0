@@ -21,7 +21,6 @@ export class HomepagePage implements OnInit {
 
   ngOnInit() {
     this.getPosition();
-    this.checkAuthentication();
   }
 
 
@@ -36,18 +35,6 @@ export class HomepagePage implements OnInit {
     } catch (error) {
       // Handle the error here, such as displaying an error message or using default coordinates.
       console.error('Error obteniendo la posición del usuario:', error);
-    }
-  }
-
-  checkAuthentication() {
-    if (this.AuthService.isAuthenticated()) {
-
-      this.change_header = 1;
-      console.log('El usuario ha iniciado sesión.');
-    } else {
-
-      this.change_header = 0;
-      console.log('El usuario no ha iniciado sesión.');
     }
   }
 

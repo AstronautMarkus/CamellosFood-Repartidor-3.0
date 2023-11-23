@@ -33,9 +33,11 @@ Implementacion:
 import { Component, Input, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth-service';
+import { ILoginCredentials } from 'src/app/interface/ILoginCredentials';
 import { ToastController } from '@ionic/angular';
 import { RouterEvent } from '@angular/router';
 import { LoginGuard } from 'src/app/guard/login.guard';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-login-page-base',
@@ -51,17 +53,18 @@ export class LoginPageBaseComponent implements OnInit {
   @Input() imgUrl: string = "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg";
   @Input() route: any = "/";
   @Input() routeRegistro: any = "/";
+  @Input() routeRecuperar: any = "/sistema/recover_password";
   @Input() titulo: string = "";
 
 
-  public formFields = {
+  public formFields: ILoginCredentials = {
     rut: null,
     email: null,
     password: null,
     recuerdame: true
   }
- 
-  constructor(private navCtrl: NavController, private authSrvc: AuthService, private toastController: ToastController, private guardCtrl: LoginGuard) { }
+  public isLoading:boolean = false;
+  constructor(private navCtrl: NavController, private authSrvc: AuthService, private toastSrv:ToastService, private guardCtrl: LoginGuard) { }
 
   public redirectTo(): void {
     this.navCtrl.navigateForward(this.route)
@@ -72,34 +75,31 @@ export class LoginPageBaseComponent implements OnInit {
     console.log(this.routeRegistro)
   }
 
-  async presentToast(position: 'top' | 'middle' | 'bottom', msg: string, color: string) {
-    const toast = await this.toastController.create({
-      message: msg,
-      duration: 5000,
-      position: position,
-      color: color
-    })
-    await toast.present()
+  public redirectToRecuperar(): void {
+    this.navCtrl.navigateForward(this.routeRecuperar)
   }
+  
   public isSubmitButtonDisabled(): boolean {
     return !this.formFields.rut && !this.formFields.email && !this.formFields.password;
   }
   onSubmit() {
+    this.isLoading = true;
     // Aquí puedes manejar la lógica para enviar los datos del formulario
     this.authSrvc.login(this.formFields).subscribe(
       (response) => {
-        this.navCtrl.navigateForward(this.route)
-
+        this.navCtrl.navigateForward(this.route, {animated: false})
+        this.isLoading = false;
         if (this.formFields.recuerdame) {
           localStorage.setItem("access_token", response.access_token)
         }
         else {
           sessionStorage.setItem("access_token", response.access_token)
         }
-
+       
       },
       (error) => {
-        this.presentToast('bottom', error.error.msg, 'danger')
+        this.isLoading = false;
+        this.toastSrv.presentToast('bottom', error.error.msg, 'danger')
       }
     )
   }

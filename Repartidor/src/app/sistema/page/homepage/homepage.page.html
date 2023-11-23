@@ -1,4 +1,4 @@
-<app-header [titulo]="change_header === 1 ? 'Camellos Food (logueado)' : 'Camellos Food (Desconectado)'"></app-header>
+<app-header></app-header>
 
 <ion-content class="disabled_scroll" [fullscreen]="true">
   <google-map
@@ -9,4 +9,4 @@
   </google-map>
 </ion-content>
 
-<app-footer-routing [titulo]="change_header === 1 ? 'Menú principal' : 'Iniciar sesión'" [color]="change_header == 1 ? '004AAD' : 'black'" [enlaceCustom]="change_header === 1 ? '/sistema/menu_principal' : '/sistema/login'"></app-footer-routing>
+<app-footer-routing></app-footer-routing>

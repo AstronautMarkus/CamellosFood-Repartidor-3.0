@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './page/login/login.page';
 import { HomepagePage } from './page/homepage/homepage.page';
 import { ChangePasswordPage } from './page/change-password/change-password.page';
-import { RecoverPasswordPage } from './page/recover-password/recover-password.page';
+
 import { MenuPrincipalPage } from './page/menu-principal/menu-principal.page';
 import { StartLoggedPage } from './page/start-logged/start-logged.page';
 import { MenuRepaPage } from './page/menu_repa/menu-repa/menu-repa.page';
@@ -20,7 +20,7 @@ import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfi
 import { FormFinalizarPedidoPage } from './page/menu_repa/form-finalizar-pedido/form-finalizar-pedido.page';
 import { LoginGuard } from '../guard/login.guard';
 
-
+import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password.page';
 
 
 const routes: Routes = [
@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'recover_password',
-    component: RecoverPasswordPage,
+    component: RecuperarPasswordPage,
   },
   {
     path: 'change_password',
@@ -48,7 +48,7 @@ const routes: Routes = [
   {
     path: 'menu_principal',
     component: MenuPrincipalPage,
-    // canActivate:[LoginGuard]
+    canActivate:[LoginGuard]
   },
   {
     path: 'start_logged',
@@ -87,7 +87,7 @@ const routes: Routes = [
     
   },
   {
-    path: 'mi_perfil_data/:id',
+    path: 'mi_perfil_data',
     component: MiPerfilDataPage,
     canActivate:[LoginGuard]
   },

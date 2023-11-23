@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!isLoading">
   <!-- 
     DOCUMENTACION
     
@@ -66,10 +66,11 @@
         </ion-input>
       </article>
     </div>
-  
+    
     <article class="field-container submit-container">
       <ion-checkbox [(ngModel)]="formFields.recuerdame" [ngModelOptions]="{standalone: true}" labelPlacement="end">Recuerdame</ion-checkbox>
-      <ion-button [disabled]="isSubmitButtonDisabled()" type="submit" style="padding: 7px 0; --background: var(--camello-primary)"  type="submit">Ingresar</ion-button>
+      <ion-button [disabled]="false" type="submit" style="padding: 7px 0; --background: var(--camello-primary)"  type="submit">Ingresar</ion-button>
+      <a (click)="redirectToRecuperar()">Olvide mi contraseña</a>
       <ion-text style="padding: 7px 0;" *ngIf="canRegister">
         <div style="display: flex; flex-direction: column; text-align: center;">
           <span>¿Necesitas crear una cuenta?</span>
@@ -80,3 +81,7 @@
   </form>
   
 </div>
+<div *ngIf="isLoading">
+    <app-loading-component></app-loading-component>
+</div>
+

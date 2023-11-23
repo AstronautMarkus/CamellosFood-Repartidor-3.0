@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -11,10 +12,16 @@ export class FooterRoutingComponent  implements OnInit {
 
   @Input() titulo:string = 'CamellosFood'
   @Input() color:string = 'green'
-  @Input() enlaceCustom: string = '/'; // Valor predeterminado del enlace personalizado
+  @Input() enlaceCustom: string = '/sistema/menu_principal'; // Valor predeterminado del enlace personalizado
 
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+
+  navegar() {
+    this.router.navigate([this.enlaceCustom]);
+  }
+  
 
   ngOnInit() {}
 
