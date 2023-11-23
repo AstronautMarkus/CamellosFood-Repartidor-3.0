@@ -48,7 +48,7 @@ const routes: Routes = [
   {
     path: 'menu_principal',
     component: MenuPrincipalPage,
-    canActivate:[LoginGuard]
+    // canActivate:[LoginGuard]
   },
   {
     path: 'start_logged',

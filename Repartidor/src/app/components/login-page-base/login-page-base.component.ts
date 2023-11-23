@@ -33,53 +33,53 @@ Implementacion:
 import { Component, Input, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth-service';
-import { ILoginCredentials } from 'src/app/interfaces/iLoginCredentials';
 import { ToastController } from '@ionic/angular';
 import { RouterEvent } from '@angular/router';
+import { LoginGuard } from 'src/app/guard/login.guard';
 
 @Component({
   selector: 'app-login-page-base',
   templateUrl: './login-page-base.component.html',
   styleUrls: ['./login-page-base.component.scss'],
 })
-export class LoginPageBaseComponent  implements OnInit {
-  
+export class LoginPageBaseComponent implements OnInit {
+
   // Valores por defecto que se cargarán si es que solo se llama al selector sin parametros
   // Coloquenle parametros sipo xdd
-  @Input() authWithRut:boolean = false;
-  @Input() canRegister:boolean = true;
-  @Input() imgUrl:string = "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg";
-  @Input() route:any = "/";
-  @Input() routeRegistro:any = "/";
-  @Input() titulo:string = "";
+  @Input() authWithRut: boolean = false;
+  @Input() canRegister: boolean = true;
+  @Input() imgUrl: string = "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg";
+  @Input() route: any = "/";
+  @Input() routeRegistro: any = "/";
+  @Input() titulo: string = "";
 
-  
-  public formFields:ILoginCredentials = {
+
+  public formFields = {
     rut: null,
     email: null,
     password: null,
     recuerdame: true
   }
-  public errormsg:string ="xd"
-  constructor(private navCtrl:NavController, private authSrvc:AuthService, private toastController:ToastController) { }
+ 
+  constructor(private navCtrl: NavController, private authSrvc: AuthService, private toastController: ToastController, private guardCtrl: LoginGuard) { }
 
-  public redirectTo():void{
+  public redirectTo(): void {
     this.navCtrl.navigateForward(this.route)
     console.log(this.route)
   }
-  public redirectToRegistro():void{
+  public redirectToRegistro(): void {
     this.navCtrl.navigateForward(this.routeRegistro)
     console.log(this.routeRegistro)
   }
 
-  async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, color:string) {
+  async presentToast(position: 'top' | 'middle' | 'bottom', msg: string, color: string) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 3000,
+      duration: 5000,
       position: position,
       color: color
-   })
-   await toast.present()
+    })
+    await toast.present()
   }
   public isSubmitButtonDisabled(): boolean {
     return !this.formFields.rut && !this.formFields.email && !this.formFields.password;
@@ -87,22 +87,23 @@ export class LoginPageBaseComponent  implements OnInit {
   onSubmit() {
     // Aquí puedes manejar la lógica para enviar los datos del formulario
     this.authSrvc.login(this.formFields).subscribe(
-      (response) =>{
+      (response) => {
         this.navCtrl.navigateForward(this.route)
 
-        if(this.formFields.recuerdame){
-          this.authSrvc.setToken(response.token, true)
+        if (this.formFields.recuerdame) {
+          localStorage.setItem("access_token", response.access_token)
         }
         else {
-          this.authSrvc.setToken(response.token, false)
+          sessionStorage.setItem("access_token", response.access_token)
         }
-        
+
       },
       (error) => {
         this.presentToast('bottom', error.error.msg, 'danger')
       }
     )
   }
-  ngOnInit() {}
-
+  ngOnInit(): void {
+ 
+  }
 }

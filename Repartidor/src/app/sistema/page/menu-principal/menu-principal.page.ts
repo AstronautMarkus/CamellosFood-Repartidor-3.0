@@ -18,6 +18,24 @@ export class MenuPrincipalPage {
   constructor(private router: Router, private loadingCtrl: LoadingController, private CounterFormService: CounterFormService, private authSrvc:AuthService ) {
   }
 
+
+  obtenerHoraYMinutos(): string {
+    
+    const ahora = new Date();
+    const horas = ahora.getHours();
+    const minutos = ahora.getMinutes();
+
+    // Añadir ceros a la izquierda si es necesario
+    const horasStr = horas < 10 ? '0' + horas : horas.toString();
+    const minutosStr = minutos < 10 ? '0' + minutos : minutos.toString();
+
+    // Formatear la hora y los minutos como "hh:mm"
+    const horaYMinutos = `${horasStr}:${minutosStr}`;
+
+    return horaYMinutos;
+  }
+
+
   IniciarSistema() {
     if (this.CounterFormService.getCounterValue() === 0) {
       this.CounterFormService.incrementCounter();
