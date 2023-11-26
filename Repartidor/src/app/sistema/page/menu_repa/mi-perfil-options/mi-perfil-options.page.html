@@ -12,7 +12,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card routerLink="/sistema/mi_perfil" [disabled]="true">
+  <ion-card (click)="enviarCodigoRecuperacion()" [disabled]="false">
     <ion-card-header>
       <ion-card-title>Cambiar contraseña <ion-icon name="person-circle"></ion-icon></ion-card-title>
     </ion-card-header>

@@ -8,8 +8,11 @@
     
 
     <ion-card-header style="text-align: center;">
+      
       <ion-card-title><b>Camellos Food (Repartidor)</b></ion-card-title>
       <ion-card-subtitle>Empleado: <b>{{ userData.pnombre }} {{ userData.papellido }}</b></ion-card-subtitle>
+      <ion-card-subtitle>Sucursal actual: <b>{{ userData?.direccion_sucursal}}, {{ userData?.comuna_sucursal}}</b></ion-card-subtitle>
+
     </ion-card-header>
   
     <ion-card-content style="text-align: center;">

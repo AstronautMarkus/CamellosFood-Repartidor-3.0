@@ -30,7 +30,7 @@ import { RouterModule } from '@angular/router';
 
 import { FooterRoutingComponent } from '../components/footer-routing/footer-routing.component';
 
-import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password.page';
+import { RecuperarPasswordPage } from './page/recuperar-password/recuperar-password.page';
 
 import { ReactiveFormsModule } from '@angular/forms';
 

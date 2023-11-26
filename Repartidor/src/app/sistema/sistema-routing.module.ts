@@ -19,8 +19,7 @@ import { MiPerfilOptionsPage } from './page/menu_repa/mi-perfil-options/mi-perfi
 
 import { FormFinalizarPedidoPage } from './page/menu_repa/form-finalizar-pedido/form-finalizar-pedido.page';
 import { LoginGuard } from '../guard/login.guard';
-
-import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password.page';
+import { RecuperarPasswordPage } from './page/recuperar-password/recuperar-password.page';
 
 
 const routes: Routes = [

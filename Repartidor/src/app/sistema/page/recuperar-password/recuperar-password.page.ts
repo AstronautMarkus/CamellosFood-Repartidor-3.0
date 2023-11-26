@@ -2,7 +2,7 @@ import { Component,  OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { RecuperarAdminService } from './service/recuperar.admin.service';
-import { ToastService } from 'src/app/service/toast.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { NavController } from '@ionic/angular';
 
 @Component({
